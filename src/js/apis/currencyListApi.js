@@ -1,12 +1,12 @@
 import { request } from '@utils/helpers';
-import { API_KEY } from '@utils/constants';
+import { API_ACCESS_KEY } from '@utils/constants';
 
 export const getCurrencyListApi = () => request(
-  'http://data.fixer.io/api/latest',
+  'http://data.fixer.io/api/symbols',
   {
     method: 'GET',
     params: {
-      access_key: API_KEY,
+      access_key: API_ACCESS_KEY,
     },
     withCredentials: false,
   },
