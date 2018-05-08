@@ -1,0 +1,16 @@
+npm-debug.log
+
+node_modules
+package-lock.json
+public
+*.deb
+*.rpm
+
+.DS_Store
+.idea
+.project
+Thumbs.db
+
+*.swp
+*.swo
+*.zip
