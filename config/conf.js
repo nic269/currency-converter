@@ -6,10 +6,10 @@ const directory = {
   DIST: resolvePath('public'),
 };
 const HTMLTemplateSettings = {
-  title: 'React stater kit with rematch & webpack 4 - By NIC',
+  title: 'Currency converter',
   og: {
-    title: '',
-    description: '',
+    title: 'currency converter',
+    description: 'Simple currency converter use react, redux, redux-saga, webpack 4',
     image: '',
   },
 };
