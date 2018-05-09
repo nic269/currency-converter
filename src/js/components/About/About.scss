@@ -1,0 +1,20 @@
+.about {
+  text-align: center;
+
+  &__copyright {
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .btn {
+    cursor: pointer;
+  }
+}

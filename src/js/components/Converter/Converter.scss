@@ -8,19 +8,65 @@
   &__form {
     width: 100%;
     max-width: 800px;
+    margin-bottom: 15px;
+  }
+
+  &__inp-wrapper {
+    position: relative;
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border: 0;
+      background: none;
+      padding: 0 20px;
+      outline: none;
+
+      .icon-search {
+        font-size: 22px;
+        color: $blue;
+      }
+    }
   }
 
   &__inp-input {
     width: 100%;
     padding: 15px 20px;
-    border-radius: 5px;
-    border: 1px solid #a9a9a9;
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
     outline: none;
     font-size: 20px;
 
     &--error {
-      border: 1px solid red;
-      color: red;
+      border: 1px solid $error-color;
+      color: $error-color;
     }
+  }
+
+  &__result {
+    width: 100%;
+    max-width: 800px;
+    padding: 15px 20px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    &__base {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 22px;
+      color: $border-color;
+    }
+
+    &__target {
+      display: block;
+      font-size: 35px;
+      color: $black;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    justify-content: flex-start;
   }
 }

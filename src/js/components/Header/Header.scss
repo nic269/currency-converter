@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &-action {
+    max-width: 300px;
+    margin: 30px auto;
+
+    a {
+      display: inline-block;
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    position: static;
+  }
+}
+
+.symbol-list {
+  padding: 15px 20px;
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  .symbol {
+    display: inline-block;
+    width: 50px;
+  }
+
+  .symbol-name {
+    margin-left: 5px;
+  }
+}

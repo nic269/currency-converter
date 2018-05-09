@@ -1,14 +1,19 @@
 /* Vendors
 ========================================================================== */
+@import "vendors/bootstrap";
 
 /* Base
   ========================================================================== */
 @import './base/vars';
 @import './base/reset';
 @import './base/typography';
+@import './base/icons';
 @import './base/layout';
 
 /* Components
   ========================================================================== */
+@import '../js/components/Header/Header';
 @import '../js/components/Converter/Converter';
 @import '../js/components/Loading/Loading';
+@import '../js/components/About/About';
+@import '../js/components/PageNotFound/PageNotFound';

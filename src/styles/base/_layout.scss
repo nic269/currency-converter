@@ -14,3 +14,30 @@ span {
 .application {
   height: 100vh;
 }
+
+.g-title {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 400;
+
+  &:after {
+    content: "";
+    height: 1px;
+    width: 4rem;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #009861;
+  }
+}
+
+.Toastify {
+  &__toast-body {
+    text-align: center;
+  }
+}

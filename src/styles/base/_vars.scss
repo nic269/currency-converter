@@ -1,6 +1,17 @@
 $white: #fff;
 $black: #000;
+$gray: #a9a9a9;
+$red: #ff0000;
+$blue: #1991ff;
+
+$border-color: $gray;
+$error-color: $red;
+$border-radius: 3px;
 
 // Path
 $base-image-url: '../assets/images';
 $base-font-url: '../assets/fonts/';
+
+/*Iconmoon*/
+$icomoon-font-path: $base-font-url;
+$icon-search: \f002;

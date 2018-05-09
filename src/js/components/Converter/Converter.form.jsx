@@ -20,6 +20,7 @@ class ConverterForm extends PureComponent {
             onChange={this.props.onChange}
             value={this.props.converterInputVal}
           />
+          <button type="submit"><i className="icon icon-search" /></button>
         </div>
       </form>
     );

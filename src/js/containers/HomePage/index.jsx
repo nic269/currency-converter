@@ -12,6 +12,7 @@ import * as currencyConvertSelector from '@redux/selectors/currencyConvertSelect
 import {
   Converter,
   Loading,
+  Header,
 } from '@components';
 import withMessageNotifyHandler from '@HOC/withMessageNotifyHandler';
 import { validateConverterInput } from '@utils/helpers';
@@ -26,22 +27,32 @@ class HomeContainer extends PureComponent {
     this.props.getCurrencyListRequest();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const {
       currencyListError,
       currencyListData,
       currencyConvertError,
       currencyConvertData,
     } = this.props;
+    const {
+      currencyConvertLoading: prevCurrencyConvertLoading,
+      currencyListLoading: prevCurrencyListLoading,
+    } = prevProps;
 
-    if (currencyListError) {
-      this.props.showError(currencyListError);
-    } else if (currencyConvertError) {
-      this.props.showError(currencyConvertError);
-    } else if (currencyListData && currencyListData.error) {
-      this.props.showError(currencyListData.error.info);
-    } else if (currencyConvertData && currencyConvertData.error) {
-      this.props.showError(currencyConvertData.error.info);
+    if (prevCurrencyConvertLoading) {
+      if (currencyConvertError) {
+        this.props.showError(currencyConvertError);
+      } else if (currencyConvertData && currencyConvertData.error) {
+        this.props.showError(currencyConvertData.error.info);
+      }
+    }
+
+    if (prevCurrencyListLoading) {
+      if (currencyListError) {
+        this.props.showError(currencyListError);
+      } else if (currencyListData && currencyListData.error) {
+        this.props.showError(currencyListData.error.info);
+      }
     }
   }
 
@@ -73,15 +84,20 @@ class HomeContainer extends PureComponent {
   }
   
   render() {
-    console.log(this.props, 'props');
     const {
+      currencyListLoading,
       currencyConvertLoading,
       currencyConvertData,
       currencyListData,
     } = this.props;
 
+    if (currencyListLoading) {
+      return <Loading />;
+    }
+
     return (
       <Converter>
+        <Header currencyListData={currencyListData} />
         <Converter.Form
           onChange={this.onChange}
           onSubmit={this.onSubmit}
@@ -93,7 +109,9 @@ class HomeContainer extends PureComponent {
           <Loading inline />
         }
         {
-          !currencyConvertLoading && currencyListData && currencyConvertData &&
+          !currencyConvertLoading
+          && currencyListData && currencyListData.success
+          && currencyConvertData && currencyConvertData.success &&
           <Converter.Result
             currencyListData={currencyListData}
             currencyConvertData={currencyConvertData}
@@ -108,6 +126,7 @@ HomeContainer.propTypes = {
   getCurrencyListRequest: PropTypes.func,
   currencyConvertRequest: PropTypes.func,
   showError: PropTypes.func,
+  currencyListLoading: PropTypes.bool,
   currencyConvertLoading: PropTypes.bool,
   currencyListError: PropTypes.object,
   currencyConvertError: PropTypes.object,
@@ -132,8 +151,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const errorHandlerOptions = {
-  position: 'top-center',
-  autoClose: 7000,
+  position: 'bottom-right',
+  autoClose: 5000,
   hideProgressBar: true,
   closeOnClick: true,
   draggablePercent: 50,

@@ -30,7 +30,7 @@ const withMessageNotifyHandler = options => (WrappedComponent) => {
             showSuccess={this.showSuccess}
           />
           <ToastContainer
-            position="top-center"
+            position="bottom-right"
             autoClose={3000}
             hideProgressBar
             newestOnTop={false}

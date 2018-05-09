@@ -19,9 +19,8 @@ class ConverterResult extends PureComponent {
     }
     return (
       <div className="converter__result">
-        {amount} {symbols[base]}
-        <br />
-        {result} {symbols[target]}
+        <span className="converter__result__base">{amount} {symbols[base]} equals</span>
+        <span className="converter__result__target">{result} {symbols[target]}</span>
       </div>
     );
   }
