@@ -1,28 +1,22 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import ConverterForm from './Converter.form';
+import ConverterResult from './Converter.result';
 
-class Converter extends PureComponent {
-  render() {
-    const {
-      onChange,
-    } = this.props;
-
-    return (
-      <div className="converter">
-        <ConverterForm onChange={onChange} />
-  
-        <div className="converter__result">
-          the result
-        </div>
-      </div>
-    );
-  }
+function Converter(props) {
+  return (
+    <div className="converter">
+      {props.children}
+    </div>
+  );
 }
 
 Converter.propTypes = {
-  onChange: PropTypes.func,
+  children: PropTypes.node.isRequired,
 };
+
+Converter.Form = ConverterForm;
+Converter.Result = ConverterResult;
 
 export default Converter;

@@ -1,0 +1,57 @@
+$speed: 0.6s;
+$color: rgba(92, 112, 128, 0.8);
+
+@keyframes lds-eclipse {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.lds {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  &.lds-inline {
+    position: static;
+    transform: none;
+  }
+
+  .lds-eclipse {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    transform: translate(-34px, -34px) scale(0.34) translate(34px, 34px);
+  
+    div {
+      position: absolute;
+      animation: lds-eclipse $speed linear infinite;
+      width: 160px;
+      height: 160px;
+      top: 20px;
+      left: 20px;
+      border-radius: 50%;
+      box-shadow: 0 4px 0 0 $color;
+      transform-origin: 80px 82px;
+    }
+  
+    &.lds-small {
+      width: 34px;
+      height: 34px;
+      transform: translate(-17px, -17px) scale(0.17) translate(17px, 17px);
+    }
+  
+    &.lds-large {
+      width: 100px;
+      height: 100px;
+      transform: translate(-50px, -50px) scale(0.5) translate(50px, 50px);
+    }
+  }
+}

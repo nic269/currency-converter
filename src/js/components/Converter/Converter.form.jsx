@@ -1,16 +1,24 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 class ConverterForm extends PureComponent {
   render() {
     return (
-      <form className="converter__form">
+      <form
+        className="converter__form"
+        onSubmit={this.props.onSubmit}
+      >
         <div className="converter__inp-wrapper">
           <input
             type="text"
             placeholder="x <symbol-1> to <symbol-2>"
-            className="converter__inp-input"
+            className={classnames({
+              'converter__inp-input': true,
+              'converter__inp-input--error': this.props.convertetInputError
+            })}
             onChange={this.props.onChange}
+            value={this.props.converterInputVal}
           />
         </div>
       </form>
@@ -20,6 +28,9 @@ class ConverterForm extends PureComponent {
 
 ConverterForm.propTypes = {
   onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  converterInputVal: PropTypes.string,
+  convertetInputError: PropTypes.bool,
 };
 
 export default ConverterForm;

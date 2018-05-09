@@ -46,3 +46,21 @@ export const request = (url, options, includeHeader = false) => new Promise((res
     .then(resolve)
     .catch(reject);
 });
+
+export const validateConverterInput = (val) => {
+  const regX = /^(\d+)\s+([a-zA-Z]{3})\s+to\s+([a-zA-Z]{3})\s*$/ig;
+  const matches = regX.exec(val);
+
+  if (matches) {
+    return {
+      isValid: true,
+      matches,
+    };
+  }
+
+  return {
+    isValid: false,
+    inValidMsg: 'your input should be: "x <symbol-1> to <symbol-2>"',
+    matches
+  };
+};
