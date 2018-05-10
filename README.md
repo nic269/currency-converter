@@ -1,6 +1,6 @@
 # Currency converter
 
-Simple currency converter use react, redux, redux-saga, webpack 4
+Simple currency converter use react, redux, redux-saga, webpack 4.
 Build my own react-app boilerplate from scratch
 
 ## Technical stack
