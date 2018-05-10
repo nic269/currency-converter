@@ -9,9 +9,14 @@ Build my own react-app boilerplate from scratch
 * [Redux](http://redux.js.org/),
 * [Babel](https://babeljs.io/),
 * [SASS](http://sass-lang.com/),
-* [Webpack](http://webpack.github.io/),
+* [Webpack 4](http://webpack.github.io/),
 * [ESLint](http://eslint.org/),
-* [StyleLint](http://stylelint.io/user-guide/configuration/)
+* [StyleLint](http://stylelint.io/user-guide/configuration/),
+* [PostCSS](https://github.com/postcss/postcss),
+* [Axios](https://github.com/axios/axios) for fetch Server API,
+* [Redux-saga](https://github.com/redux-saga/redux-saga) for handle side effect model on appliation,
+* HOC Component for handle message notify,
+* Ejs template engine,
 
 
 ### Installation
