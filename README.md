@@ -13,10 +13,11 @@ Build my own react-app boilerplate from scratch
 * [ESLint](http://eslint.org/),
 * [StyleLint](http://stylelint.io/user-guide/configuration/),
 * [PostCSS](https://github.com/postcss/postcss),
-* [Axios](https://github.com/axios/axios) for fetch Server API,
-* [Redux-saga](https://github.com/redux-saga/redux-saga) for handle side effect model on appliation,
-* HOC Component for handle message notify,
+* [Axios](https://github.com/axios/axios) for fetching Server API,
+* [Redux-saga](https://github.com/redux-saga/redux-saga) for handling side effect model on appliation,
+* HOC Component for handling message notify[error, warning, info ...],
 * Ejs template engine,
+...
 
 
 ### Installation
