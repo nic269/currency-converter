@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux-immutable';
 import { routerReducer } from 'react-router-redux';
 
-import currencyListReducer from './currencyListReducer';
-import currencyConvertReducer from './currencyConvertReducer';
+import homePageReducer from '@containers/HomePage/reducer';
 
 const rootReducers = {
-  currencyListReducer,
-  currencyConvertReducer,
+  homePageReducer,
 };
 
 export default function createReducer() {

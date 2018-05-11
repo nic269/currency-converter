@@ -25,7 +25,6 @@ module.exports = {
       '@components': `${SRC}/js/components`,
       '@utils': `${SRC}/js/utils`,
       '@apis': `${SRC}/js/apis`,
-      '@redux': `${SRC}/js/redux`,
       '@HOC': `${SRC}/js/HOC`,
       '@assets': `${SRC}/assets`,
       '@styles': `${SRC}/styles`,

@@ -5,9 +5,10 @@ import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 
 import Application from '@containers/Application';
-import configureStore from '@redux/configureStore';
 import '@styles/styles.scss';
 import 'react-toastify/dist/ReactToastify.css';
+
+import configureStore from './configureStore';
 
 const initialState = {};
 const history = createHistory();

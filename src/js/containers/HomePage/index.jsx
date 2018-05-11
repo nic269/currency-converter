@@ -4,11 +4,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators, compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import { getCurrencyListRequest } from '@redux/actions/currencyListAction';
-import * as currencyListSelector from '@redux/selectors/currencyListSelector';
-import { currencyConvertRequest } from '@redux/actions/currencyConvertAction';
-import * as currencyConvertSelector from '@redux/selectors/currencyConvertSelector';
-
 import {
   Converter,
   Loading,
@@ -16,6 +11,16 @@ import {
 } from '@components';
 import withMessageNotifyHandler from '@HOC/withMessageNotifyHandler';
 import { validateConverterInput } from '@utils/helpers';
+
+import {
+  getCurrencyListRequest,
+  currencyConvertRequest,
+} from './actions';
+
+import {
+  makeSelectCurrencyList,
+  makeSelectCurrencyConvert,
+} from './selectors';
 
 class HomeContainer extends PureComponent {
   state = {
@@ -135,12 +140,12 @@ HomeContainer.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  currencyListData: currencyListSelector.makeSelectData(),
-  currencyListError: currencyListSelector.makeSelectError(),
-  currencyListLoading: currencyListSelector.makeSelectLoading(),
-  currencyConvertData: currencyConvertSelector.makeSelectData(),
-  currencyConvertError: currencyConvertSelector.makeSelectError(),
-  currencyConvertLoading: currencyConvertSelector.makeSelectLoading(),
+  currencyListData: makeSelectCurrencyList.data(),
+  currencyListError: makeSelectCurrencyList.error(),
+  currencyListLoading: makeSelectCurrencyList.loading(),
+  currencyConvertData: makeSelectCurrencyConvert.data(),
+  currencyConvertError: makeSelectCurrencyConvert.error(),
+  currencyConvertLoading: makeSelectCurrencyConvert.loading(),
 });
 
 const mapDispatchToProps = dispatch => ({
